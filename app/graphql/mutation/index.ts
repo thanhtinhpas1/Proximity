@@ -11,11 +11,6 @@ export const MUTATION_ADD_MESSAGE = gql`
         id
         body
         createdAt
-        author {
-          id
-          name
-          avatar
-        }
       }
     }
   }
@@ -32,8 +27,10 @@ export const MUTATION_UPDATE_FOLLOWING = gql`
 `;
 
 export const MUTATION_CREATE_TEMPORARY_CHAT = gql`
-  mutation CreateTemporaryChat {
-    createTemporaryChat {
+  mutation CreateTemporaryChat($userId: String!) {
+    createTemporaryChat(
+      userId: $userId,
+    ) {
       id
     }
   }
@@ -122,9 +119,6 @@ export const MUTATION_LAST_SEEN = gql`
     updateLastSeen(userId: $userId) {
       chats {
         messages(last: 1) {
-          author {
-            id
-          }
           seen
         }
       }

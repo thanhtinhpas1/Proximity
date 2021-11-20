@@ -3,6 +3,7 @@ import { generateUUID } from './shared';
 import { Asset, StoragePaths, Errors, AuthDefaults } from '@app/constants';
 import { Platform } from 'react-native';
 import { SocialSignInType, SocialSignInResult } from '@app/types/auth';
+import { TaskEvent } from 'react-native-firebase/storage';
 
 export const storage = firebase.storage();
 export const messaging = firebase.messaging();
@@ -28,6 +29,7 @@ export const processSocialSignIn = async (
 ): Promise<SocialSignInResult> => {
   let credentials: AuthCredential;
 
+  // Get credentials
   if (type === SocialSignInType.GOOGLE) {
     const { idToken, accessToken } = authResult;
     credentials = getGoogleCredentials(idToken, accessToken);
@@ -39,6 +41,7 @@ export const processSocialSignIn = async (
   const {
     user: { providerData, providerId },
   } = await auth.signInWithCredential(credentials);
+  
   const [
     { uid: token, displayName, photoURL, email },
   ] = providerData;
@@ -53,7 +56,7 @@ export const processSocialSignIn = async (
     avatar,
     email: safeEmail,
   };
-  
+
   return socialSignInResult;
 };
 
@@ -78,7 +81,7 @@ export const initializeFCM = async () => {
       return await messaging.getToken();
     }
   } catch ({ message }) {
-    crashlytics.recordCustomError(Errors.INITIALIZE_FCM, message);
+    crashlytics.recordCustomError(Errors.INITIALIZE_FCM, message as string);
   }
 };
 
@@ -92,7 +95,11 @@ export const uploadToStorage = (asset: string, uri: string, userId: string) => {
     storageRef = `${StoragePaths.posts}/${userId}/${generateUUID()}.${type}`;
   }
 
-  return storage.ref(storageRef).putFile(uri);
+  let task = storage.ref(storageRef).putFile(uri);
+  task.on('state_changed' as TaskEvent, taskSnapshot => {
+    console.log(`${taskSnapshot.bytesTransferred} transferred out of ${taskSnapshot.totalBytes}`);
+  });
+  return task
 };
 
 export const getMediaType = (uri: string) => uri.split('.').slice(-1);

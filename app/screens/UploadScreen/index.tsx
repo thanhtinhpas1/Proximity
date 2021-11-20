@@ -59,7 +59,7 @@ const UploadScreen: React.FC = () => {
     } catch ({ message }) {
       setIsUploading(false);
       uploadErrorNotification('Post');
-      crashlytics.recordCustomError(Errors.ASSET_UPLOAD, message);
+      crashlytics.recordCustomError(Errors.ASSET_UPLOAD, message as string);
     }
   };
 

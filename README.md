@@ -116,6 +116,37 @@ For GraphQL schema please take a look at `app/graphql/schema/schema.graphql`
 
 ## :running: Running the project
 
+First of all, you need to register an code push account for update latest change of your application:
+- Install code-push-cli
+```
+npm i -g code-push-cli
+```
+
+- Register account
+```
+code-push register
+```
+then register with Github or Microsoft account
+
+- Code push login, this will open up the browser and generate an access key for you
+```
+code-push login
+```
+then enter your key to terminal
+
+- Register your app with ios platform
+```
+code-push app add <your_app_name> ios react-native
+```
+Then the key for Staging and Production will show on your terminal
+
+- Register your app with android platform
+```
+code-push app add <your_app_name> android react-native
+The key will show on your terminal also
+
+- Define Staging and Production keys in `index.ts` file for both ios and android
+
 To run the project just use the following
 
 - Android

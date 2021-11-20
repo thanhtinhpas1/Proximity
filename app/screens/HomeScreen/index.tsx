@@ -49,7 +49,7 @@ const HomeScreen: React.FC = () => {
           }
         });
       } catch ({ message }) {
-        crashlytics.recordCustomError(Errors.UPDATE_FCM_TOKEN, message)
+        crashlytics.recordCustomError(Errors.UPDATE_FCM_TOKEN, message as string)
       }
     });
 

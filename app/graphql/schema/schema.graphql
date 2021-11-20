@@ -38,7 +38,7 @@ type Mutation {
     handle: String!
     about: String!
   ): User!
-  createTemporaryChat: Chat!
+  createTemporaryChat(userId: String!): Chat!
   connectChatToUsers(chatId: String!, userId: String!, targetId: String!): Chat!
   addChatMessage(chatId: String!, authorId: String!, body: String!): Chat!
   updateFollowing(

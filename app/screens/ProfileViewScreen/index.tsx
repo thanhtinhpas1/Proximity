@@ -49,7 +49,9 @@ const ProfileViewScreen: React.FC = () => {
   const toggleBlockConfirmationModal = () => setBlockConfirmationModal(!blockConfirmationModal);
 
   const ListHeaderComponent = () => {
-    const { user: { avatar, following, followers, name, handle, about } } = data;
+    let { user: { avatar, following, followers, name, handle, about } } = data;
+    following = following ? following : []
+    followers = followers ? followers : []
     return (
       <ProfileCard
         avatar={avatar}
@@ -79,8 +81,10 @@ const ProfileViewScreen: React.FC = () => {
   let content = <ProfileScreenPlaceholder viewMode />;
 
   if (!loading && !error) {
-    const { user: { handle, following, followers, posts } } = data;
-    const sortedPosts = sortPostsAscendingTime(posts);
+    let { user: { handle, following, followers, posts } } = data;
+    following = following ? following : []
+    followers = followers ? followers : []
+    const sortedPosts = Array.isArray(posts) ? sortPostsAscendingTime(posts) : [];
 
     content = (
       <>

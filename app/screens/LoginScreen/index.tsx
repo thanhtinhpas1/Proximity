@@ -59,7 +59,7 @@ const LoginScreen: React.FC = () => {
       const token = await loadToken();
       navigateToApp(token);
     } catch ({ message, name: errorType }) {
-      handleLoginError(errorType);
+      handleLoginError(errorType as string);
       setInitializing(false);
     }
     SplashScreen.hide();
@@ -100,16 +100,15 @@ const LoginScreen: React.FC = () => {
   };
 
   const onGoogleSignIn = async () => {
-
     if (googleLoading) return;
 
     try {
       setGoogleLoading(true);
 
+      // Send request logi to Google
       await GoogleSignin.signIn();
 
       const { idToken, accessToken } = await GoogleSignin.getTokens()
-
       const authResult: GoogleAuthResult = {
         idToken,
         accessToken
@@ -120,17 +119,17 @@ const LoginScreen: React.FC = () => {
       await processSignIn(token, avatar, name, email);
     } catch ({ message }) {
       setGoogleLoading(false);
-      crashlytics.recordCustomError(Errors.SIGN_IN, message);
+      crashlytics.recordCustomError(Errors.SIGN_IN, message as string);
     }
   };
 
 
   const onAppleSignIn = async () => {
-
     if (appleLoading) return;
 
     try {
       setAppleLoading(true);
+      // Send request login to Apple
       const appleAuthRequestResponse = await appleAuth.performRequest({
         requestedOperation: AppleAuthRequestOperation.LOGIN,
         requestedScopes: [AppleAuthRequestScope.EMAIL, AppleAuthRequestScope.FULL_NAME],
@@ -152,7 +151,7 @@ const LoginScreen: React.FC = () => {
     } catch (error) {
       somethingWentWrongErrorNotification();
       setAppleLoading(false);
-      crashlytics.recordCustomError(Errors.SIGN_IN, error);
+      crashlytics.recordCustomError(Errors.SIGN_IN, error as string);
     }
   };
 
@@ -179,6 +178,7 @@ const LoginScreen: React.FC = () => {
     }
   }
 
+  // User has not login
   if (!initializing) {
     content = (
       <>

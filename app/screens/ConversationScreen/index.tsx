@@ -85,7 +85,7 @@ const ConversationScreen: React.FC = () => {
   let content = <ConversationScreenPlaceholder />
 
   if (chatQueryCalled && !chatQueryLoading && !chatQueryError) {
-    const transform = transformMessages(messages);
+    const transform = transformMessages(messages ?? []);
 
     content = (
       <GiftedChat

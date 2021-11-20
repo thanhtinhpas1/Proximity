@@ -107,12 +107,12 @@ const MessageScreen: React.FC = () => {
       if (chatExists) {
         navigate(Routes.ConversationScreen, { chatId: chatExists.id, avatar, handle, targetId });
       } else {
-        const { data } = await createTemporaryChat();
+        const { data } = await createTemporaryChat({variables: {userId: user.id}});
         navigate(Routes.ConversationScreen, { chatId: data.createTemporaryChat.id, avatar, handle, targetId });
       }
     } catch ({ message }) {
       tryAgainLaterNotification();
-      crashlytics.recordCustomError(Errors.INITIALIZE_CHAT, message);
+      crashlytics.recordCustomError(Errors.INITIALIZE_CHAT, message as string);
     }
   };
 

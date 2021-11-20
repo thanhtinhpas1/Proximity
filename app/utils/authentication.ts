@@ -22,6 +22,6 @@ export const signOut = async () => {
     await removeToken();
     await auth.signOut();
   } catch ({ message }) {
-    crashlytics.recordCustomError(Errors.SIGN_OUT, message);
+    crashlytics.recordCustomError(Errors.SIGN_OUT, message as string);
   }
 };

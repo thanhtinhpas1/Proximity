@@ -14,16 +14,16 @@ const {
 
 const codepush = {
   staging: Platform.select({
-    ios: '<private>',
-    android: '<private>'
+    ios: 'oa4DnS5bWcdKfrn6-hFW0IM0cxz_ND0HjltT7',
+    android: 'Iz1BBAYspY9VD86eAEaaZKCAatx94o8euMgaX'
   }),
   production: Platform.select({
-    ios: '<private>',
-    android: '<private>'
+    ios: 'SVCEKMZ6XPV9-CNIapN2-4UlLuoh-sJrX9L5i',
+    android: 'CazhWsogurvhEf16g4IJnpil2n29Hza2Jojdf'
   })
 };
 
-const webClientId: string = '649469906394-0d9hghf2jv5n9n0t0o763e5bheer720f.apps.googleusercontent.com';
+const webClientId: string = '890341145128-vf62gsp2k9nc1t5l9d1bm8c51ds7gh99.apps.googleusercontent.com';
 
 const Config = {
   author: { name, email, url },
@@ -31,8 +31,8 @@ const Config = {
   version,
   codepush,
   url: {
-    https: 'https://proximity-development.herokuapp.com/',
-    wss: 'wss://proximity-development.herokuapp.com/',
+    http: 'http://172.16.0.141:8080/',
+    wss: 'ws://172.16.0.141:8080/',
   },
   webClientId
 };

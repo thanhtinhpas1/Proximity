@@ -129,7 +129,7 @@ const EditProfileBottomSheet: React.FC<EditProfileBottomSheetProps> = React.forw
       } else {
         somethingWentWrongErrorNotification();
       }
-      crashlytics.recordCustomError(Errors.ASSET_UPLOAD, message);
+      crashlytics.recordCustomError(Errors.ASSET_UPLOAD, message as string);
     }
   };
 

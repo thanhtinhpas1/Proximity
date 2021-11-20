@@ -7,7 +7,7 @@ import { ExplorePost } from '@app/types/screens';
 export const createAsyncDelay = (duration: number) => {
   return new Promise((resolve, _) =>
     setTimeout(() => {
-      resolve();
+      resolve(null);
     }, duration),
   );
 };
@@ -132,7 +132,7 @@ export const getImageFromLibrary = async (
     const assetData = await ImagePicker.openPicker(options);
     return assetData;
   } catch ({ code }) {
-    if (!code.includes('CANCELLED')) {
+    if (!(code as string).includes('CANCELLED')) {
       noPermissionNotification();
     }
   }

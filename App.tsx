@@ -35,7 +35,7 @@ const SafeAreaApp = () => {
       const themeType = await loadThemeType();
       toggleTheme(themeType);
     } catch ({ message }) {
-      crashlytics.recordCustomError(Errors.LOAD_THEME, message);
+      crashlytics.recordCustomError(Errors.LOAD_THEME, message as string);
     }
   };
 
@@ -52,7 +52,7 @@ const SafeAreaApp = () => {
 
           updateUnreadMessages(unreadMessages);
         } catch ({ message }) {
-          crashlytics.recordCustomError(Errors.UPDATE_LAST_SEEN, message);
+          crashlytics.recordCustomError(Errors.UPDATE_LAST_SEEN, message as string);
         }
       }
     }, PollIntervals.lastSeen);

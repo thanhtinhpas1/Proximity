@@ -162,8 +162,8 @@ const PostViewScreen: React.FC = () => {
     } = postData;
 
     const { readableTime } = parseTimeElapsed(createdAt);
-    const isLiked = likes.includes(user.id);
-    const readableLikes = parseLikes(likes.length);
+    const isLiked = (likes as string[]).includes(user.id);
+    const readableLikes = parseLikes((likes as string[]).length);
 
     content = (
       <>

@@ -7,7 +7,7 @@ import { WebSocketLink } from 'apollo-link-ws';
 import { getMainDefinition } from 'apollo-utilities';
 import Config from '@app/config';
 
-const httpLink = new HttpLink({ uri: Config.url.https });
+const httpLink = new HttpLink({ uri: Config.url.http });
 
 const wsLink = new WebSocketLink({
   uri: Config.url.wss,

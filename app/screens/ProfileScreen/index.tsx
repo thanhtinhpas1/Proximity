@@ -58,7 +58,9 @@ const ProfileScreen: React.FC = () => {
   };
 
   const ListHeaderComponent = () => {
-    const { user: { avatar, following, followers, name, handle, about } } = data;
+    let { user: { avatar, following, followers, name, handle, about } } = data;
+    following = following ? following : []
+    followers = followers ? followers : []
     return (
       <ProfileCard
         editable
@@ -89,8 +91,10 @@ const ProfileScreen: React.FC = () => {
   let content = <ProfileScreenPlaceholder />;
 
   if (!loading && !error) {
-    const { user: { avatar, name, handle, following, followers, about, posts } } = data;
-    const sortedPosts = sortPostsAscendingTime(posts);
+    let { user: { avatar, name, handle, following, followers, about, posts } } = data;
+    following = following ? following : []
+    followers = followers ? followers : []
+    const sortedPosts = Array.isArray(posts) ? sortPostsAscendingTime(posts) : [];
     content = (
       <>
         <FlatGrid
