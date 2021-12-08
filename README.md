@@ -144,7 +144,7 @@ Then the key for Staging and Production will show on your terminal
 ```
 code-push app add <your_app_name> android react-native
 The key will show on your terminal also
-
+```
 - Define Staging and Production keys in `index.ts` file for both ios and android
 
 To run the project just use the following
