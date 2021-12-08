@@ -31,8 +31,8 @@ const Config = {
   version,
   codepush,
   url: {
-    http: 'http://172.16.0.141:8080/',
-    wss: 'ws://172.16.0.141:8080/',
+    http: 'http://localhost:8080/',
+    wss: 'ws://localhost:8080/',
   },
   webClientId
 };

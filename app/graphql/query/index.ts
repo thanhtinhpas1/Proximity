@@ -76,6 +76,7 @@ export const QUERY_CHATS = gql`
   query Chats($userId: String!) {
     chats(userId: $userId) {
       id
+      createdAt
       participants {
         id
         avatar

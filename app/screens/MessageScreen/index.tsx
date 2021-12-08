@@ -15,7 +15,7 @@ import NewMessageBottomSheet from './components/NewMessageBottomSheet';
 
 import Entypo from 'react-native-vector-icons/Entypo';
 import client from '@app/graphql/client';
-import { MUTATION_CREATE_TEMPORARY_CHAT } from '@app/graphql/mutation';
+import { MUTATION_CONNECT_CHAT_TO_USERS, MUTATION_CREATE_TEMPORARY_CHAT } from '@app/graphql/mutation';
 import { useNavigation } from 'react-navigation-hooks';
 import { crashlytics } from '@app/utils/firebase';
 import { tryAgainLaterNotification } from '@app/utils/notifications';
@@ -31,7 +31,8 @@ const MessageScreen: React.FC = () => {
     pollInterval: PollIntervals.messages
   });
 
-  const [createTemporaryChat] = useMutation(MUTATION_CREATE_TEMPORARY_CHAT);
+  const [createTemporaryChat] = useMutation(MUTATION_CONNECT_CHAT_TO_USERS);
+  const [connectChat] = useMutation(MUTATION_CONNECT_CHAT_TO_USERS)
 
   const [chatSearch, setChatSearch] = useState('');
   const newMessageBottomSheetRef = useRef();
@@ -42,7 +43,9 @@ const MessageScreen: React.FC = () => {
 
   const renderItem = ({ item }) => {
 
-    const { id: chatId, participants, messages } = item;
+    let { id: chatId, participants, messages } = item;
+    participants = participants ? participants : []
+    messages = messages ? messages : []
     const [participant] = filterChatParticipants(user.id, participants);
     const [lastMessage] = messages;
 
@@ -108,6 +111,7 @@ const MessageScreen: React.FC = () => {
         navigate(Routes.ConversationScreen, { chatId: chatExists.id, avatar, handle, targetId });
       } else {
         const { data } = await createTemporaryChat({variables: {userId: user.id}});
+        await connectChat({variables: {chatId: data.createTemporaryChat.id, userId: user.id, targetId: targetId}})
         navigate(Routes.ConversationScreen, { chatId: data.createTemporaryChat.id, avatar, handle, targetId });
       }
     } catch ({ message }) {

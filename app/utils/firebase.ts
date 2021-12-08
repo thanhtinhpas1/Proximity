@@ -98,6 +98,12 @@ export const uploadToStorage = (asset: string, uri: string, userId: string) => {
   let task = storage.ref(storageRef).putFile(uri);
   task.on('state_changed' as TaskEvent, taskSnapshot => {
     console.log(`${taskSnapshot.bytesTransferred} transferred out of ${taskSnapshot.totalBytes}`);
+  }, err => console.log(err));
+
+  task.then(() => {
+    console.log('Image uploaded to the bucket!');
+  }).catch(err => {
+    console.log(err)
   });
   return task
 };
