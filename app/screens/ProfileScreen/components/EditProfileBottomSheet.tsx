@@ -61,9 +61,9 @@ const EditProfileBottomSheet: React.FC<EditProfileBottomSheetProps> = React.forw
     if (!isHandleAvailableLoading && isHandleAvailableCalled) {
       const { isHandleAvailable } = isHandleAvailableData;
       if (!isHandleAvailable) {
-        setHandleError('username not available');
+        setHandleError('Tên đăng nhập đã tồn tại');
       } else {
-        if (!editableHandle) setHandleError('username cannot be empty')
+        if (!editableHandle) setHandleError('Tên đăng nhập không được trống')
         else setHandleError('');
       }
     }
@@ -79,23 +79,23 @@ const EditProfileBottomSheet: React.FC<EditProfileBottomSheetProps> = React.forw
     const { isHandleAvailable } = isHandleAvailableData;
 
     if (!editableName.trim().length) {
-      showErrorNotification('Name cannot be empty');
+      showErrorNotification('Tên không được trống');
       return;
     }
     if (editableAbout.trim().length > 200) {
-      inputLimitErrorNotification('About', 'less', 200);
+      inputLimitErrorNotification('Về tôi', 'less', 200);
       return;
     }
     if (!isHandleAvailable) {
-      showErrorNotification('Username is not available');
+      showErrorNotification('Tên đăng nhập đã tồn tại');
       return;
     }
     if (!editableHandle) {
-      showErrorNotification('Username cannot be empty');
+      showErrorNotification('Tên đăng nhập không được trống');
       return;
     }
     if (editableHandle.split(' ').length > 1) {
-      showErrorNotification('Username cannot contain blank spaces');
+      showErrorNotification('Tên tài khoản không được có khoảng trống');
       return;
     }
 
@@ -125,7 +125,7 @@ const EditProfileBottomSheet: React.FC<EditProfileBottomSheetProps> = React.forw
       ref.current.close();
     } catch ({ message }) {
       if (avatarChanged) {
-        uploadErrorNotification('Avatar');
+        uploadErrorNotification('Hình đại diện');
       } else {
         somethingWentWrongErrorNotification();
       }
@@ -134,7 +134,7 @@ const EditProfileBottomSheet: React.FC<EditProfileBottomSheetProps> = React.forw
   };
 
   const setHandle = (handle: string) => {
-    if (!handle) setHandleError('username cannot be empty');
+    if (!handle) setHandleError('Tên đăng nhập không được trống');
     setEditableHandle(handle);
   }
 
@@ -168,8 +168,8 @@ const EditProfileBottomSheet: React.FC<EditProfileBottomSheetProps> = React.forw
       modalStyle={styles(theme).container}
       adjustToContentHeight>
       <BottomSheetHeader
-        heading='Edit profile'
-        subHeading='Edit your personal information'
+        heading='Cập nhật tài khoản'
+        subHeading='Cập nhật thông tin tài khoản'
       />
       <View style={styles().content}>
         <ImageBackground
@@ -183,15 +183,15 @@ const EditProfileBottomSheet: React.FC<EditProfileBottomSheetProps> = React.forw
 
         <FormInput
           ref={null}
-          label='Name'
-          placeholder='example: Doggo'
+          label='Tên'
+          placeholder='ví dụ: Doggo'
           value={editableName}
           onChangeText={setEditableName}
         />
         <FormInput
           ref={null}
-          label='Username'
-          placeholder='example: doggo'
+          label='Tên đăng nhập'
+          placeholder='ví dụ: doggo'
           error={handleError}
           value={editableHandle}
           onChangeText={setHandle}>
@@ -199,8 +199,8 @@ const EditProfileBottomSheet: React.FC<EditProfileBottomSheetProps> = React.forw
         </FormInput>
         <FormInput
           ref={null}
-          label='About'
-          placeholder='example: hey, I am a doggo'
+          label='Mô tả'
+          placeholder='ví dụ: hey, I am a doggo'
           value={editableAbout}
           onChangeText={setEditableAbout}
           multiline
@@ -208,7 +208,7 @@ const EditProfileBottomSheet: React.FC<EditProfileBottomSheetProps> = React.forw
         />
         <Button
           Icon={Icon}
-          label='Done'
+          label='Xong'
           onPress={onDone}
           loading={isUploading}
           containerStyle={styles().doneButton}

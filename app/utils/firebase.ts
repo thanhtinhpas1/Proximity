@@ -3,7 +3,6 @@ import { generateUUID } from './shared';
 import { Asset, StoragePaths, Errors, AuthDefaults } from '@app/constants';
 import { Platform } from 'react-native';
 import { SocialSignInType, SocialSignInResult } from '@app/types/auth';
-import { TaskEvent } from 'react-native-firebase/storage';
 
 export const storage = firebase.storage();
 export const messaging = firebase.messaging();
@@ -95,17 +94,7 @@ export const uploadToStorage = (asset: string, uri: string, userId: string) => {
     storageRef = `${StoragePaths.posts}/${userId}/${generateUUID()}.${type}`;
   }
 
-  let task = storage.ref(storageRef).putFile(uri);
-  task.on('state_changed' as TaskEvent, taskSnapshot => {
-    console.log(`${taskSnapshot.bytesTransferred} transferred out of ${taskSnapshot.totalBytes}`);
-  }, err => console.log(err));
-
-  task.then(() => {
-    console.log('Image uploaded to the bucket!');
-  }).catch(err => {
-    console.log(err)
-  });
-  return task
+  return storage.ref(storageRef).putFile(uri);
 };
 
 export const getMediaType = (uri: string) => uri.split('.').slice(-1);

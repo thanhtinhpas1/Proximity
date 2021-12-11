@@ -146,9 +146,9 @@ const ProfileViewScreen: React.FC = () => {
       {content}
       <ProfileOptionsBottomSheet ref={profileOptionsBottomSheetRef} onBlockUser={onBlockUser} />
       <ConfirmationModal
-        label='Confirm'
-        title='Block'
-        description='Are you sure you want to block this user?'
+        label='Xác nhận'
+        title='Chặn'
+        description='Bạn chắc chắn muốn chặn người này?'
         color={ThemeStatic.delete}
         isVisible={blockConfirmationModal}
         toggle={toggleBlockConfirmationModal}

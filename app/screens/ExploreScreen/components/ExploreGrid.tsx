@@ -53,7 +53,7 @@ const ExploreGrid: React.FC<ExploreGridProps> = ({ posts, onRefresh, tintColor, 
         itemDimension={responsiveWidth(92)}
         showsVerticalScrollIndicator={false}
         items={parsedGridImages}
-        ListEmptyComponent={() => <ListEmptyComponent placeholder='No posts found' spacing={60} />}
+        ListEmptyComponent={() => <ListEmptyComponent placeholder='Không có bài viết mới' spacing={60} />}
         spacing={5}
         onEndReached={onEndReached}
         onEndReachedThreshold={0.5}

@@ -14,11 +14,35 @@ interface HomeHeaderProps {
 const HomeHeader: React.FC<HomeHeaderProps> = ({ IconRight }) => {
 
   const { theme } = useContext(AppContext);
-  const weekdayNow = dateFormat(new Date(), 'dddd');
+  let weekdayNow = dateFormat(new Date(), 'dddd');
+  switch (weekdayNow) {
+    case "Monday":
+      weekdayNow = "Thứ hai"
+      break;
+      case "Tuesday":
+        weekdayNow = "Thứ ba"
+        break;
+      case "Webnesday":
+        weekdayNow = "Thứ tư"
+        break;
+      case "Thursday":
+        weekdayNow = "Thứ năm"
+        break;
+      case "Saturday":
+        weekdayNow = "Thứ sáu"
+        break;
+      case "Friday":
+        weekdayNow = "Thứ bảy"
+        break;
+      case "Sunday":
+        weekdayNow = "Chủ nhật"
+    default:
+      break;
+  }
   return (
     <View style={styles(theme).container}>
       <View>
-        <Text style={styles(theme).topTitle}>PROXIMITY</Text>
+        <Text style={styles(theme).topTitle}>VNLINE</Text>
         <Text style={styles(theme).title}>{weekdayNow}</Text>
       </View>
       {IconRight && <IconRight />}

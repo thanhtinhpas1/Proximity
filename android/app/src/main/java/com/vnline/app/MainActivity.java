@@ -1,4 +1,4 @@
-package com.proximity.app;
+package com.vnline.app;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;

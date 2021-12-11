@@ -166,7 +166,11 @@ export const QUERY_POST = gql`
         createdAt
       }
       uri
-      likes
+      likes {
+        userId
+        postId
+        action
+      }
       caption
       createdAt
     }
@@ -194,7 +198,11 @@ export const QUERY_USER_FEED = gql`
         avatar
         handle
       }
-      likes
+      likes {
+        userId
+        postId
+        action
+      }
     }
   }
 `;

@@ -42,7 +42,7 @@ const ConfirmationModal: React.FC<ConfirmationModalModal> = ({ title, descriptio
           containerStyle={[styles().confirm, { backgroundColor: color || theme.accent, }]}
         />
         <Button
-          label='Cancel'
+          label='Đóng'
           onPress={toggle}
           loading={false}
           labelStyle={{ color: theme.text02 }}

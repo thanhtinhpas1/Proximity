@@ -36,7 +36,11 @@ export const SUBSCRIPTION_POST = gql`
         createdAt
       }
       uri
-      likes
+      likes {
+        userId
+        postId
+        action
+      }
       caption
       createdAt
     }

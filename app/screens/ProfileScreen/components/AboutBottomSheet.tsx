@@ -55,14 +55,14 @@ const AboutBottomSheet: React.FC<AboutBottomSheetProps> = React.forwardRef((_, r
       modalStyle={styles(theme).container}
       adjustToContentHeight>
       <BottomSheetHeader
-        heading='About'
-        subHeading='About Proximity'
+        heading='Về chúng tôi'
+        subHeading='Về VNLINE'
       />
       <View style={styles().content}>
-        <Image source={ProximityLogo} style={styles().logoImage} />
+        {/* <Image source={ProximityLogo} style={styles().logoImage} /> */}
         <Text style={styles(theme).versionText}>{version}</Text>
         <Text style={styles(theme).aboutText}>
-          Proximity is an Open Source social media app I designed
+          VNLINE is an Open Source social media app I designed
           and developed in my free time, this app is fully open
           source and doesn't use your data against you in any
           shape or form. The code for mobile apps is open-source
@@ -77,7 +77,7 @@ const AboutBottomSheet: React.FC<AboutBottomSheetProps> = React.forwardRef((_, r
         <View style={styles().actions}>
           <AboutAction
             iconName='link'
-            label='Contact me'
+            label='Liên hệ tôi'
             onPress={() => openLink(url)}
           />
 

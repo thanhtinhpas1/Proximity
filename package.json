@@ -3,13 +3,13 @@
   "version": "2.1.0",
   "private": true,
   "author": {
-    "name": "Karan Pratap Singh",
-    "email": "karan.pratapsingh686@gmail.com",
-    "url": "http://karanpratapsingh.com"
+    "name": "Tinh Tran",
+    "email": "thanhtinhpas1@mail.com",
+    "url": "https://www.linkedin.com/in/tinh-tran-thanh/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/karanpratapsingh/Proximity.git"
+    "url": "https://github.com/thanhtinhpas1/Proximity.git"
   },
   "scripts": {
     "start": "react-native start",
@@ -19,8 +19,8 @@
     "device": "react-native run-ios --device=\"iPhone\"",
     "android": "react-native run-android",
     "emulator": "emulator @PIXEL_API_28",
-    "codepush:ios": "appcenter codepush release-react -a proximity -d Production",
-    "codepush:android": "appcenter codepush release-react -a proximity-anndroid -d Production"
+    "codepush:ios": "appcenter codepush release-react -a Karan-Pratap-Singh/Proximity -d Production",
+    "codepush:android": "appcenter codepush release-react -a Karan-Pratap-Singh/Proximity-Android -d Production"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",

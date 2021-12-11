@@ -30,10 +30,10 @@ const PostOptionsBottomSheet: React.FC<PostOptionsBottomSheetProps> = React.forw
     ref.current.close();
   };
 
-  let subHeading = 'Tell us what you think';
+  let subHeading = 'Bạn đang nghĩ gì?';
   let content = (
     <Option
-      label='Report'
+      label='Báo cáo'
       iconName='ios-flag'
       color={ThemeStatic.delete}
       onPress={onPostReport}
@@ -41,16 +41,16 @@ const PostOptionsBottomSheet: React.FC<PostOptionsBottomSheetProps> = React.forw
   );
 
   if (isOwnPost) {
-    subHeading = 'Manage your post'
+    subHeading = 'Quản lý bài viết'
     content = (
       <>
         <Option
-          label='Edit'
+          label='Cập nhật'
           iconName='md-create'
           onPress={onPostEdit}
         />
         <Option
-          label='Delete'
+          label='Xóa'
           iconName='md-trash'
           color={ThemeStatic.delete}
           onPress={onPostDelete}
@@ -67,7 +67,7 @@ const PostOptionsBottomSheet: React.FC<PostOptionsBottomSheetProps> = React.forw
       modalStyle={styles(theme).container}
       adjustToContentHeight>
       <BottomSheetHeader
-        heading='Options'
+        heading='Lựa chọn'
         subHeading={subHeading}
       />
       <View style={styles().content}>

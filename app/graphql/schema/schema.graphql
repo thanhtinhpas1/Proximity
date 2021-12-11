@@ -93,7 +93,13 @@ type Post {
   author: User!
   createdAt: DateTime!
   comments: [Comment!]
-  likes: [String!]
+  likes: [Like!]
+}
+
+type Like {
+  userId: String!
+  postId: String!
+  actionL LikeAction!
 }
 
 enum NotificationType {

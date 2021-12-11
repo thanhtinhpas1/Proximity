@@ -183,7 +183,7 @@ const LoginScreen: React.FC = () => {
     content = (
       <>
         <View style={styles(theme).content}>
-          <Text style={styles(theme).titleText}>Proximity</Text>
+          <Text style={styles(theme).titleText}>VNLINE</Text>
           <Text style={styles(theme).subtitleText}>
             Welcome to an open
             source social media where you are
@@ -220,9 +220,9 @@ const LoginScreen: React.FC = () => {
       {content}
       <TermsAndConditionsBottomSheet ref={termsAndConditionsBottomSheetRef} />
       <ConfirmationModal
-        label='Confirm'
-        title='Terms and Conditions'
-        description={`By clicking confirm you agree to our terms and conditions`}
+        label='Xác nhận'
+        title='Quy định và điều khoản'
+        description={`Nhấn vào xác nhận sẽ tương đương với chấp thuận quy định và điều khoản của VNLINE`}
         color={ThemeStatic.accent}
         isVisible={termsConfirmationModal}
         toggle={termsConfirmationToggle}

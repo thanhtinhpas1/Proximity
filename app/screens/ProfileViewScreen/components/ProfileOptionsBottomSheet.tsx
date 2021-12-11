@@ -23,12 +23,12 @@ const ProfileOptionsBottomSheet: React.FC<ProfileOptionsBottomSheetProps> = Reac
       modalStyle={styles(theme).container}
       adjustToContentHeight>
       <BottomSheetHeader
-        heading='Options'
-        subHeading='Tell us what you think'
+        heading='Mô tả'
+        subHeading='Bạn đang suy nghĩ gì?'
       />
       <View style={styles().content}>
         <Option
-          label='Block'
+          label='Chặn'
           iconName='ios-close-circle'
           color={ThemeStatic.delete}
           onPress={onBlockUser}

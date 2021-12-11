@@ -42,7 +42,7 @@ const Comments: React.FC<CommentsProps> = ({ postId, comments }) => {
     );
   };
 
-  const ListHeaderComponent = () => <Text style={[styles(theme).commentsHeader, { marginBottom }]}>Comments</Text>
+  const ListHeaderComponent = () => <Text style={[styles(theme).commentsHeader, { marginBottom }]}>Bình luận</Text>
 
   const marginBottom = comments.length === 0 ? 0 : 20;
 
@@ -56,7 +56,7 @@ const Comments: React.FC<CommentsProps> = ({ postId, comments }) => {
       style={styles().listStyle}
       ListEmptyComponent={() =>
         <ListEmptyComponent
-          placeholder='Be the first one to comment'
+          placeholder='Hãy là người đầu tiêu bình luận nào'
           placeholderStyle={styles().placeholderStyle}
           spacing={10}
         />

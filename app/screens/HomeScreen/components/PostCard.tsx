@@ -16,12 +16,18 @@ type Author = {
   handle: string
 };
 
+type Like = {
+  userId: string
+  postId: string
+  action: string
+}
+
 interface PostCardProps {
   id: string,
   author: Author,
   time: string,
   uri: string,
-  likes: string[],
+  likes: Like[],
   caption: string
 };
 
@@ -34,7 +40,7 @@ const PostCard: React.FC<PostCardProps> = ({ id, author, time, uri, likes, capti
 
   const { readableTime } = parseTimeElapsed(time);
   const readableLikes = parseLikes(likes.length);
-  const isLiked = likes.includes(user.id);
+  const isLiked = likes.filter(like => like.userId === user.id)?.length > 0;
 
   return (
     <TouchableOpacity onPress={navigateToPost} activeOpacity={0.9} style={styles.container}>

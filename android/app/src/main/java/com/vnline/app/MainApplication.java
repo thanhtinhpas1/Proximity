@@ -1,4 +1,4 @@
-package com.proximity.app;
+package com.vnline.app;
 
 import android.app.Application;
 import android.content.Context;

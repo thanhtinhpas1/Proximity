@@ -24,7 +24,7 @@
 		BB6720213246FCBC314305F8 /* libPods-Proximity-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A5F7342E9D94CF1FDB26EC /* libPods-Proximity-tvOSTests.a */; };
 		D018F5151F1CA6A69004C036 /* libPods-Proximity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8CE75295927D05EB32BB19C /* libPods-Proximity.a */; };
 		F6597E35239223CA00656B44 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F6597E34239223CA00656B44 /* Config.xcconfig */; };
-		F66138A4239017B6000C37DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F66138A3239017B6000C37DC /* GoogleService-Info.plist */; };
+		FA2BC44F2762FBD900E8C75C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA2BC44E2762FBD900E8C75C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,8 +92,9 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F0AC0B3606DD981E9E43938D /* Pods-ProximityTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProximityTests.release.xcconfig"; path = "Target Support Files/Pods-ProximityTests/Pods-ProximityTests.release.xcconfig"; sourceTree = "<group>"; };
 		F6597E34239223CA00656B44 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		F66138A3239017B6000C37DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6AD2E072391049200A6EFF2 /* Proximity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Proximity.entitlements; path = Proximity/Proximity.entitlements; sourceTree = "<group>"; };
+		FA2BC44E2762FBD900E8C75C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA95493A2762FD3B00907356 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,8 +153,8 @@
 		13B07FAE1A68108700A75B9A /* Proximity */ = {
 			isa = PBXGroup;
 			children = (
+				FA95493A2762FD3B00907356 /* GoogleService-Info.plist */,
 				F6AD2E072391049200A6EFF2 /* Proximity.entitlements */,
-				F66138A3239017B6000C37DC /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -204,12 +205,13 @@
 			isa = PBXGroup;
 			children = (
 				F6597E34239223CA00656B44 /* Config.xcconfig */,
-				13B07FAE1A68108700A75B9A /* Proximity */,
-				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* ProximityTests */,
-				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				FA2BC44E2762FBD900E8C75C /* GoogleService-Info.plist */,
+				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				25B8A877B40026E2ABE6B86C /* Pods */,
+				83CBBA001A601CBA00E9B192 /* Products */,
+				13B07FAE1A68108700A75B9A /* Proximity */,
+				00E356EF1AD99517003FC87E /* ProximityTests */,
 				BEE14A3B0C0F4692A86EF71D /* Resources */,
 			);
 			indentWidth = 2;
@@ -408,12 +410,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				FA2BC44F2762FBD900E8C75C /* GoogleService-Info.plist in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				30665F90D23B40248AF3479A /* SFProDisplay-Bold.ttf in Resources */,
 				31AB1EF23BE44D24828DD808 /* SFProDisplay-Light.ttf in Resources */,
 				7ED5D18A922A44538536EDB7 /* SFProDisplay-Regular.ttf in Resources */,
 				F6597E35239223CA00656B44 /* Config.xcconfig in Resources */,
-				F66138A4239017B6000C37DC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

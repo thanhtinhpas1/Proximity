@@ -140,7 +140,7 @@ const ProfileScreen: React.FC = () => {
   return (
     <View style={styles(theme).container}>
       <Header
-        title='My Profile'
+        title='Tài khoản của tôi'
         IconRight={IconRight}
       />
       {content}

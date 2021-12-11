@@ -33,7 +33,7 @@ const UserSearchResults: React.FC<UserSearchResultsProps> = ({ searchResults }) 
       itemDimension={responsiveWidth(85)}
       showsVerticalScrollIndicator={false}
       items={filteredSearchResults}
-      ListEmptyComponent={() => <ListEmptyComponent placeholder='No users found' spacing={60} />}
+      ListEmptyComponent={() => <ListEmptyComponent placeholder='Không tìm thấy' spacing={60} />}
       style={styles.container}
       spacing={20}
       renderItem={renderItem}

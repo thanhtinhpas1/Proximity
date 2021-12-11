@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>890341145128-h9ht1sg3r9ct1o24ftllhm2r48gog9a0.apps.googleusercontent.com</string>
+	<string>890341145128-4dpj6rg3alnah3on867k432aij5d40am.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.890341145128-h9ht1sg3r9ct1o24ftllhm2r48gog9a0</string>
+	<string>com.googleusercontent.apps.890341145128-4dpj6rg3alnah3on867k432aij5d40am</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAsFpahGiAwEmqU0pyCNeD3cuAYBo5yoKE</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.proximity.myapp</string>
+	<string>com.proximity.app</string>
 	<key>PROJECT_ID</key>
 	<string>proximity-ecf97</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:890341145128:ios:fbc8abe2b8e6d60814131d</string>
+	<string>1:890341145128:ios:14544ac19916b08314131d</string>
 	<key>DATABASE_URL</key>
 	<string>https://proximity-ecf97-default-rtdb.asia-southeast1.firebasedatabase.app</string>
 </dict>

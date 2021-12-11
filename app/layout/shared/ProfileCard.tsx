@@ -57,14 +57,14 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ avatar, editable, onEdit, onF
   return (
     <View style={styles(theme).container}>
       <View style={styles(theme).info}>
-        <Connections onPress={onFollowingOpen} total={parseConnectionsCount(following)} type='FOLLOWING' />
+        <Connections onPress={onFollowingOpen} total={parseConnectionsCount(following)} type='Đang theo dõi' />
         <ImageBackground
           source={{ uri: avatar ? avatar : '' }}
           style={styles(theme).avatar}
           imageStyle={styles(theme).avatarImage}>
           {editable && <EditProfile onEdit={onEdit} />}
         </ImageBackground>
-        <Connections onPress={onFollowersOpen} total={parseConnectionsCount(followers)} type='FOLLOWERS' />
+        <Connections onPress={onFollowersOpen} total={parseConnectionsCount(followers)} type='Theo dõi bạn' />
       </View>
       <View style={styles(theme).name}>
         <Text style={styles(theme).usernameText}>{name}</Text>
@@ -72,7 +72,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ avatar, editable, onEdit, onF
       </View>
       {renderInteractions && renderInteractions()}
       <View style={styles(theme).about}>
-        <Text style={styles(theme).aboutTitle}>About</Text>
+        <Text style={styles(theme).aboutTitle}>Về tôi</Text>
         <Text style={styles(theme).aboutText}>{about}</Text>
       </View>
     </View>

@@ -8,12 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:890341145128:android:0975debce5e42e1614131d",
+        "mobilesdk_app_id": "1:890341145128:android:e3eababec5beae9b14131d",
         "android_client_info": {
-          "package_name": "com.proximity.app"
+          "package_name": "com.vnline.app"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "890341145128-fst0i7afmspifeufmg12otta9lk2n8rs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vnline.app",
+            "certificate_hash": "de1e6a510431a1600aaa9b791a5f7c2dca534611"
+          }
+        },
         {
           "client_id": "890341145128-vf62gsp2k9nc1t5l9d1bm8c51ds7gh99.apps.googleusercontent.com",
           "client_type": 3
@@ -32,10 +40,10 @@
               "client_type": 3
             },
             {
-              "client_id": "890341145128-h9ht1sg3r9ct1o24ftllhm2r48gog9a0.apps.googleusercontent.com",
+              "client_id": "890341145128-4dpj6rg3alnah3on867k432aij5d40am.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.proximity.myapp"
+                "bundle_id": "com.proximity.app"
               }
             }
           ]

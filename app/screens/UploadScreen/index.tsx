@@ -33,7 +33,7 @@ const UploadScreen: React.FC = () => {
     }
 
     if (caption.length > 200) {
-      inputLimitErrorNotification('Caption', 'less', 200);
+      inputLimitErrorNotification('Tiêu đề', 'less', 200);
       return;
     }
 
@@ -73,21 +73,21 @@ const UploadScreen: React.FC = () => {
 
   return (
     <KeyboardAvoidingView behavior={keyboardBehavior} style={styles(theme).container}>
-      <Header title='Upload' />
+      <Header title='Đăng bài' />
       <ScrollView showsVerticalScrollIndicator={false} style={styles().content}>
         <UploadBanner pickedAsset={pickedAsset} onAsset={setPickedAsset} />
         <FormInput
           ref={captionInputRef}
           multiline
-          label='Caption'
-          placeholder='Write a caption...'
+          label='Tiêu đề'
+          placeholder='Viết tiêu đề...'
           value={caption}
           onChangeText={setCaption}
           characterRestriction={200}
         />
         <Button
           Icon={Icon}
-          label='Upload'
+          label='Đăng'
           onPress={uploadImage}
           loading={isUploading}
           containerStyle={styles().uploadButton}

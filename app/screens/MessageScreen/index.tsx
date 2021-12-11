@@ -89,7 +89,7 @@ const MessageScreen: React.FC = () => {
         itemDimension={responsiveWidth(85)}
         showsVerticalScrollIndicator={false}
         items={sortedFilteredChats}
-        ListEmptyComponent={() => <SvgBanner Svg={EmptyMessages} spacing={16} placeholder='No messages' />}
+        ListEmptyComponent={() => <SvgBanner Svg={EmptyMessages} spacing={16} placeholder='Không tìm thấy tin nhắn' />}
         style={styles().messagesList}
         spacing={20}
         renderItem={renderItem}
@@ -134,13 +134,13 @@ const MessageScreen: React.FC = () => {
   return (
     <View style={styles(theme).container}>
       <Header
-        title='Messages'
+        title='Tin nhắn'
         IconRight={IconRight}
       />
       <SearchBar
         value={chatSearch}
         onChangeText={setChatSearch}
-        placeholder='Search for chats...'
+        placeholder='Tìm kiếm tin nhắn...'
       />
       {content}
       <NewMessageBottomSheet

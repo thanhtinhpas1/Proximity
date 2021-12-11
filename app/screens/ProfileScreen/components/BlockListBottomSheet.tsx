@@ -38,7 +38,7 @@ const BlockListBottomSheet: React.FC<BlockListBottomSheetProps> = React.forwardR
   const ListEmptyComponent = () => (
     <SvgBanner
       Svg={EmptyBlockListBanner}
-      placeholder='No users blocked'
+      placeholder='Không có danh sách chặn'
       spacing={16}
     />
   );
@@ -107,8 +107,8 @@ const BlockListBottomSheet: React.FC<BlockListBottomSheetProps> = React.forwardR
       scrollViewProps={{ showsVerticalScrollIndicator: false }}
       modalStyle={styles(theme).container}>
       <BottomSheetHeader
-        heading='Blocked Users'
-        subHeading={`Below are the users you've blocked`}
+        heading='Chặn người dùng'
+        subHeading={`Bên dưới là những người dùng bạn đã chặn`}
       />
       <View style={styles(theme).content}>
         {content}

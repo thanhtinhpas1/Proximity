@@ -32,7 +32,7 @@ const EditPostBottomSheet: React.FC<EditPostBottomSheetProps> = React.forwardRef
     try {
       await editPost({ variables: { postId, caption: editableCaption } });
     } catch ({ message }) {
-      crashlytics.recordCustomError(Errors.EDIT_POST, message);
+      crashlytics.recordCustomError(Errors.EDIT_POST, message as string);
     }
     setIsUpdating(false);
     postUpdatedNotification();
@@ -54,22 +54,22 @@ const EditPostBottomSheet: React.FC<EditPostBottomSheetProps> = React.forwardRef
       modalStyle={styles(theme).container}
       adjustToContentHeight>
       <BottomSheetHeader
-        heading='Edit Post'
-        subHeading='Edit your post'
+        heading='Cập nhật bài viết'
+        subHeading='Cập nhật bài viết'
       />
       <View style={styles().content}>
         <FormInput
           ref={editableCaptionRef}
           multiline
-          label='Caption'
-          placeholder='Update your caption...'
+          label='Tiêu đề'
+          placeholder='Cập nhật tiêu đề của bạn...'
           value={editableCaption}
           onChangeText={setEditableCaption}
           characterRestriction={200}
         />
         <Button
           Icon={Icon}
-          label='Update'
+          label='Cập nhật'
           onPress={updatePost}
           loading={isUpdating}
           containerStyle={styles().updateButton}

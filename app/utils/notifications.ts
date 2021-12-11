@@ -2,35 +2,35 @@ import { showMessage } from 'react-native-flash-message';
 import { ThemeStatic } from '@app/theme';
 
 export const welcomeNotification = () => showMessage({
-  message: 'Welcome to Proximity',
+  message: 'Chào mừng bạn đến với VNLINE',
   icon: 'success',
   type: 'success',
   duration: 2000
 });
 
 export const postUploadedNotification = () => showMessage({
-  message: 'Upload complete, your post is live',
+  message: 'Tải lên thành công, giờ đây bạn bè của bạn có thể xem bài viết',
   icon: 'success',
   type: 'success',
   duration: 2000
 });
 
 export const uploadErrorNotification = (asset: string) => showMessage({
-  message: `${asset} upload failed, please try again later`,
+  message: `${asset} tải lên thất bại, vui lòng thử lại sau`,
   icon: 'danger',
   type: 'danger',
   duration: 2000
 });
 
 export const inputLimitErrorNotification = (type: string, condition: string, limit: number) => showMessage({
-  message: `${type} should be ${condition} than ${limit} characters`,
+  message: `${type} nên ${condition} hơn ${limit} ký tự`,
   icon: 'danger',
   type: 'danger',
   duration: 4000
 });
 
 export const somethingWentWrongErrorNotification = () => showMessage({
-  message: 'Oops, please try again later',
+  message: 'Oops, vui lòng thử lại sau',
   icon: 'danger',
   type: 'danger',
   duration: 4000
@@ -45,7 +45,7 @@ export const showErrorNotification = (message: string) => showMessage({
 });
 
 export const noAssetInfoNotification = () => showMessage({
-  message: 'Please pick an image before uploading',
+  message: 'Vui lòng tải lên hình ảnh trước khi đăng bài',
   icon: 'info',
   type: 'info',
   backgroundColor: ThemeStatic.accent,
@@ -53,14 +53,14 @@ export const noAssetInfoNotification = () => showMessage({
 });
 
 export const noPermissionNotification = () => showMessage({
-  message: 'Please allow photo gallery permissions',
+  message: 'Vui lòng cho phép truy cập hình ảnh',
   icon: 'danger',
   type: 'danger',
   duration: 4000
 });
 
 export const longPressDeleteNotification = onLongPress => showMessage({
-  message: 'Long press this notification to delete',
+  message: 'Nhấn và giữ thông báo này để xóa',
   icon: 'danger',
   type: 'danger',
   duration: 4000,
@@ -69,14 +69,14 @@ export const longPressDeleteNotification = onLongPress => showMessage({
 });
 
 export const tryAgainLaterNotification = () => showMessage({
-  message: 'Please try again later',
+  message: 'Vui lòng thử lại sau',
   icon: 'danger',
   type: 'danger',
   duration: 4000
 });
 
 export const postReportedNotification = () => showMessage({
-  message: 'Post has been reported and submitted for review',
+  message: 'Bài viết đã được báo cáo, vui lòng đợi quản trị viên xem xét',
   icon: 'info',
   type: 'info',
   backgroundColor: ThemeStatic.accent,
@@ -84,14 +84,14 @@ export const postReportedNotification = () => showMessage({
 });
 
 export const postUpdatedNotification = () => showMessage({
-  message: 'Post has been updated',
+  message: 'Bài viết đã được cập nhật',
   icon: 'success',
   type: 'success',
   duration: 2000
 });
 
 export const postDeletedNotification = () => showMessage({
-  message: 'Post has been deleted',
+  message: 'Bài viết đã bị xóa',
   icon: 'info',
   type: 'info',
   backgroundColor: ThemeStatic.accent,
@@ -99,7 +99,7 @@ export const postDeletedNotification = () => showMessage({
 });
 
 export const userBlockedNotification = (handle: string = 'User') => showMessage({
-  message: `${handle} has been blocked, please refresh your feed`,
+  message: `${handle} đã bị chặn, vui lòng tải lại`,
   icon: 'info',
   type: 'info',
   backgroundColor: ThemeStatic.accent,
@@ -107,7 +107,7 @@ export const userBlockedNotification = (handle: string = 'User') => showMessage(
 });
 
 export const longPressUnblockNotification = (onLongPress, handle) => showMessage({
-  message: `Long press this notification to unblock ${handle}`,
+  message: `Nhấn và giữ thông báo này để mở chặn ${handle}`,
   icon: 'danger',
   type: 'danger',
   duration: 4000,

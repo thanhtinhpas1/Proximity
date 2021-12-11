@@ -27,11 +27,11 @@ const CommentInput: React.FC<CommentInputProps> = ({ postId, scrollViewRef }) =>
 
   const postComment = async () => {
     if (comment.length < 1) {
-      inputLimitErrorNotification('Comment', 'more', 1);
+      inputLimitErrorNotification('Bình luận', 'more', 1);
       return;
     }
     if (comment.length > 200) {
-      inputLimitErrorNotification('Comment', 'less', 200);
+      inputLimitErrorNotification('Bình luận', 'less', 200);
       return;
     }
     await addComment({ variables: { userId: user.id, postId, body: comment } });
@@ -72,7 +72,7 @@ const CommentInput: React.FC<CommentInputProps> = ({ postId, scrollViewRef }) =>
       <TextInput
         style={styles(theme).commentTextInput}
         value={comment}
-        placeholder={`Add a comment as ${user.handle}...`}
+        placeholder={`Thêm 1 bình luận...`}
         placeholderTextColor={theme.text02}
         onChangeText={setComment}
       />

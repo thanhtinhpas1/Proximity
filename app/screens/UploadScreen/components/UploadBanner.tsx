@@ -25,7 +25,7 @@ const UploadBanner: React.FC<UploadBannerProps> = ({ pickedAsset, onAsset }) => 
   let content = (
     <SvgBanner
       Svg={UploadSvg}
-      placeholder='Click to upload a new post'
+      placeholder='Nhấn để tải hình ảnh lên'
       textStyle={styles.placeholderText}
     />
   );

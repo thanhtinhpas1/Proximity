@@ -43,7 +43,7 @@ const NotificationScreen: React.FC = () => {
         itemDimension={responsiveWidth(85)}
         showsVerticalScrollIndicator={false}
         items={notifications}
-        ListEmptyComponent={() => <SvgBanner Svg={EmptyNotifications} spacing={20} placeholder='No notifications yet' />}
+        ListEmptyComponent={() => <SvgBanner Svg={EmptyNotifications} spacing={20} placeholder='Không có thông báo mới' />}
         style={styles().notificationList}
         spacing={20}
         renderItem={renderItem}
@@ -53,7 +53,7 @@ const NotificationScreen: React.FC = () => {
 
   return (
     <View style={styles(theme).container}>
-      <Header title='Notifications' />
+      <Header title='Thông báo' />
       {content}
     </View>
   );

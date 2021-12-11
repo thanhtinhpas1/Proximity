@@ -12,16 +12,21 @@ import { ThemeColors } from '@app/types/theme';
 
 interface LikesBottomSheetProps {
   ref: React.Ref<any>,
-  likes: string[],
+  likes: Like[],
   onUserPress: (userId: string) => void
 };
+
+type Like = {
+  userId: string
+  postId: string
+  action: string
+}
 
 const LikesBottomSheet: React.FC<LikesBottomSheetProps> = React.forwardRef(({ likes, onUserPress }, ref) => {
 
   const { theme } = useContext(AppContext);
-
   const { data, loading, error } = useQuery(QUERY_LIKE_USERS, {
-    variables: { likes },
+    variables: { likes: likes.map(like => like.userId) },
     fetchPolicy: 'network-only'
   });
 
@@ -30,7 +35,7 @@ const LikesBottomSheet: React.FC<LikesBottomSheetProps> = React.forwardRef(({ li
   const ListEmptyComponent = () => (
     <SvgBanner
       Svg={EmptyLikesBanner}
-      placeholder='No likes yet'
+      placeholder='Chưa có lượt thích'
       spacing={16}
     />
   );
@@ -74,8 +79,8 @@ const LikesBottomSheet: React.FC<LikesBottomSheetProps> = React.forwardRef(({ li
       scrollViewProps={{ showsVerticalScrollIndicator: false }}
       modalStyle={styles(theme).container}>
       <BottomSheetHeader
-        heading='Likes'
-        subHeading='Users who liked this post'
+        heading='Lượt thích'
+        subHeading='Ai đang thích bài viết này'
       />
       <View style={styles(theme).content}>
         {content}

@@ -28,25 +28,25 @@ const ConnectionsBottomSheet: React.FC<ConnectionsBottomSheetProps> = React.forw
   let subHeading;
 
   if (type === Connections.FOLLOWING) {
-    heading = 'Following';
+    heading = 'Đang theo dõi';
     if (viewMode) {
-      subHeading = `People ${handle} is following`;
+      subHeading = `Bạn bè ${handle} đang theo dõi`;
     } else {
-      subHeading = 'People you are following';
+      subHeading = 'Bạn bè bạn đang theo dõi';
     }
   } else if (type === Connections.FOLLOWERS) {
-    heading = 'Followers';
+    heading = 'Theo dõi bạn';
     if (viewMode) {
-      subHeading = `People who are following ${handle}`;
+      subHeading = `Bạn bè đang theo dõi ${handle}`;
     } else {
-      subHeading = 'People who are following you';
+      subHeading = 'Bạn bè đang theo dõi bạn';
     }
   }
 
   const ListEmptyComponent = () => (
     <SvgBanner
       Svg={EmptyConnectionsBanner}
-      placeholder='No users found'
+      placeholder='Không tìm thấy người dùng'
       spacing={16}
     />
   );

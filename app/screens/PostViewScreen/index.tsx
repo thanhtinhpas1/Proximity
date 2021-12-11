@@ -24,6 +24,12 @@ import PostOptionsBottomSheet from './components/PostOptionsBottomSheet';
 
 const { FontWeights, FontSizes } = Typography;
 
+type Like = {
+  userId: string
+  postId: string
+  action: string
+}
+
 const PostViewScreen: React.FC = () => {
 
   const { user, theme } = useContext(AppContext);
@@ -162,7 +168,7 @@ const PostViewScreen: React.FC = () => {
     } = postData;
 
     const { readableTime } = parseTimeElapsed(createdAt);
-    const isLiked = (likes as string[]).includes(user.id);
+    const isLiked = (likes as Like[]).filter(like => like.userId === user.id)?.length > 0;
     const readableLikes = parseLikes((likes as string[]).length);
 
     content = (
@@ -237,9 +243,9 @@ const PostViewScreen: React.FC = () => {
           caption={caption}
         />
         <ConfirmationModal
-          label='Delete'
-          title='Delete post?'
-          description={`Do you want to delete the current post? Post won't be recoverable later`}
+          label='Xóa'
+          title='Xóa bài viết?'
+          description={`Bạn có chắc muốn xóa bài viết này? Bài viết sẽ không thể khôi phục sau đó.`}
           color={ThemeStatic.delete}
           isVisible={isConfirmModalVisible}
           toggle={confirmationToggle}

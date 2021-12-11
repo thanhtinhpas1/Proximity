@@ -34,10 +34,10 @@ target 'Proximity' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  pod 'Firebase/Core', '~> 6.5.0'
-  pod 'Firebase/Storage', '~> 6.5.0'
-  pod 'Firebase/Messaging', '~> 6.5.0'
-  pod 'Firebase/Auth', '~> 6.5.0'
+  pod 'Firebase/Core', '~> 6.13.0'
+  pod 'Firebase/Storage', '~> 6.13.0'
+  pod 'Firebase/Messaging', '~> 6.13.0'
+  pod 'Firebase/Auth', '~> 6.13.0'
   pod 'Fabric', '~> 1.10.2'
   pod 'Crashlytics', '~> 3.14.0'
   
@@ -59,23 +59,23 @@ target 'Proximity-tvOS' do
 
 end
 
-# post_install do |installer|
-#     ## Fix for XCode 12.5
-#     find_and_replace("../node_modules/react-native/React/CxxBridge/RCTCxxBridge.mm",
-#     "_initializeModules:(NSArray<id<RCTBridgeModule>> *)modules", "_initializeModules:(NSArray<Class> *)modules")
-#     find_and_replace("../node_modules/react-native/ReactCommon/turbomodule/core/platform/ios/RCTTurboModuleManager.mm",
-#         "RCTBridgeModuleNameForClass(module))", "RCTBridgeModuleNameForClass(Class(module)))")
-# end
+post_install do |installer|
+    ## Fix for XCode 12.5
+    find_and_replace("../node_modules/react-native/React/CxxBridge/RCTCxxBridge.mm",
+    "_initializeModules:(NSArray<id<RCTBridgeModule>> *)modules", "_initializeModules:(NSArray<Class> *)modules")
+    find_and_replace("../node_modules/react-native/ReactCommon/turbomodule/core/platform/ios/RCTTurboModuleManager.mm",
+        "RCTBridgeModuleNameForClass(module))", "RCTBridgeModuleNameForClass(Class(module)))")
+end
 
-# def find_and_replace(dir, findstr, replacestr)
-#   Dir[dir].each do |name|
-#       text = File.read(name)
-#       replace = text.gsub(findstr,replacestr)
-#       if text != replace
-#           puts "Fix: " + name
-#           File.open(name, "w") { |file| file.puts replace }
-#           STDOUT.flush
-#       end
-#   end
-#   Dir[dir + '*/'].each(&method(:find_and_replace))
-# end
+def find_and_replace(dir, findstr, replacestr)
+  Dir[dir].each do |name|
+      text = File.read(name)
+      replace = text.gsub(findstr,replacestr)
+      if text != replace
+          puts "Fix: " + name
+          File.open(name, "w") { |file| file.puts replace }
+          STDOUT.flush
+      end
+  end
+  Dir[dir + '*/'].each(&method(:find_and_replace))
+end

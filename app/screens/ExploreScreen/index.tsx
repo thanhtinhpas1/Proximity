@@ -72,7 +72,7 @@ const ExploreScreen: React.FC = () => {
     if (searchUsersQueryCalled && searchUsersQueryLoading) {
       subContent = <SearchUsersPlaceholder />;
     } else if (!searchUsersQueryLoading && userSearch === '') {
-      subContent = <SvgBanner Svg={SearchUsersBanner} spacing={16} placeholder='Search for users...' />
+      subContent = <SvgBanner Svg={SearchUsersBanner} spacing={16} placeholder='Tìm kiếm bạn bè...' />
     } else if (searchUsersQueryCalled && !searchUsersQueryLoading && !searchUsersQueryError) {
       subContent = <UserSearchResults searchResults={searchResults} />;
     }
@@ -88,13 +88,13 @@ const ExploreScreen: React.FC = () => {
 
   return (
     <View style={styles(theme).container}>
-      <Header title='Explore' />
+      <Header title='Mở rộng' />
       <AnimatedSearchBar
         onFocus={onFocus}
         onBlur={onBlur}
         value={userSearch}
         onChangeText={setUserSearch}
-        placeholder='Search for users...'
+        placeholder='Tìm kiếm bạn bè...'
       />
       <View style={styles().content}>
         {content}

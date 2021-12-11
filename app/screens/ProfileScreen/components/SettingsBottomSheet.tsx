@@ -49,12 +49,12 @@ const SettingsBottomSheet: React.FC<SettingsBottomSheetProps> = React.forwardRef
       modalStyle={styles(theme).container}
       adjustToContentHeight>
       <BottomSheetHeader
-        heading='Settings'
-        subHeading='Themes and options'
+        heading='Cài đặt'
+        subHeading='Màu sắc và lựa chọn'
       />
       <View style={styles().content}>
         <Option
-          label='Blocked users'
+          label='Chặn người dùng'
           iconName='ios-list'
           onPress={onBlockListPress}
         />
@@ -70,12 +70,12 @@ const SettingsBottomSheet: React.FC<SettingsBottomSheetProps> = React.forwardRef
           />
         </Option>
         <Option
-          label='About'
+          label='Tìm hiểu thêm'
           iconName='ios-information-circle-outline'
           onPress={onAboutPress}
         />
         <Option
-          label='Logout'
+          label='Đăng xuất'
           iconName='ios-log-out'
           onPress={logOut}
         />

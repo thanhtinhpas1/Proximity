@@ -45,32 +45,32 @@ export const parseTimeElapsed = (utcTime: string) => {
 
   if (elapsedWeeks >= 1) {
     if (elapsedWeeks === 1) {
-      parsedTime = `${elapsedWeeks} week`;
+      parsedTime = `${elapsedWeeks} tuần`;
     } else {
-      parsedTime = `${elapsedWeeks} weeks`;
+      parsedTime = `${elapsedWeeks} tuần`;
     }
   } else if (elapsedDays >= 1) {
     if (elapsedDays === 1) {
-      parsedTime = `${elapsedDays} day`;
+      parsedTime = `${elapsedDays} ngày`;
     } else {
-      parsedTime = `${elapsedDays} days`;
+      parsedTime = `${elapsedDays} ngày`;
     }
   } else if (elapsedHours >= 1) {
     if (elapsedHours === 1) {
-      parsedTime = `${elapsedHours} hr`;
+      parsedTime = `${elapsedHours} giờ`;
     } else {
-      parsedTime = `${elapsedHours} hrs`;
+      parsedTime = `${elapsedHours} giờ`;
     }
   } else if (elapsedMinutes >= 1) {
     if (elapsedMinutes === 1) {
-      parsedTime = `${elapsedMinutes} min`;
+      parsedTime = `${elapsedMinutes} phút`;
     } else {
-      parsedTime = `${elapsedMinutes} mins`;
+      parsedTime = `${elapsedMinutes} phút`;
     }
-  } else if (elapsedMinutes < 1) parsedTime = 'just now';
+  } else if (elapsedMinutes < 1) parsedTime = 'vừa xong';
 
   const readableTime =
-    parsedTime === 'just now' ? `${parsedTime}` : `${parsedTime} ago`;
+    parsedTime === 'vừa xong' ? `${parsedTime}` : `${parsedTime} trước`;
 
   return {
     parsedTime,
@@ -144,7 +144,7 @@ export const isUserOnline = (lastSeen: number) => {
 };
 
 export const parseLikes = (likeCount: number) => {
-  return likeCount === 1 ? `${likeCount} like` : `${likeCount} likes`;
+  return `${likeCount} lượt thích`;
 };
 
 export const searchQueryFilter = (array, userId: string, query: string) =>
